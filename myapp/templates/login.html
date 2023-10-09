@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <body>
+        
+         
+        <form action="" method="POST"> 
+            {% csrf_token%}
+            <center> <h1> Login Form </h1> </center>   
+            <div class="container">   
+                <label>Username : </label>   
+                <input type="text" placeholder="username" name="username" required>  
+                
+                <label>Password : </label>   
+                <input type="password" placeholder="password" name="password" required>  
+                <button type="submit">Login</button>  
+                 
+                {% if messages %}
+                {% for m in messages%}
+                <div class="messages">
+                  <p>  {{ m }}</p>
+                        {% endfor%}
+                
+                {% endif%}
+                </div>
+            </div>   
+             
+        </form>    
+        
+    </body>     
+    </html>  

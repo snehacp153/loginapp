@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <center><h1>Welcome {{ request.user }}</h1></center>
+        <form action="{% url 'logout' %}">
+            <button type="submit" value="logout">Logout</button>
+        </form>
+    </div>
+    
+
+</body>
+</html>
